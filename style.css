@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif; /* Define la familia de fuentes para todo el texto. */
+    display: flex; /* Habilita Flexbox. */
+    justify-content: center; /* Centra los elementos hijos horizontalmente. */
+    align-items: center; /* Centra los elementos hijos verticalmente. */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura del viewport. */
+    background-color: #f0f2f5; /* Color de fondo de toda la página. */
+    margin: 0; /* Elimina el margen externo predeterminado. */
+    color: #333; /* Color de texto predeterminado. */
+}
+
+/* Estilos para los botones de opción específicos del quiz */
+.option-button.correct {
+    background-color: #a8e6cf !important; /* Verde claro para respuestas correctas. !important es para forzar la sobreescritura si Bootstrap lo impide. */
+    color: #333 !important; /* Asegura que el texto sea oscuro. */
+    border-color: #a8e6cf !important; /* Coincide el borde. */
+}
+
+.option-button.incorrect {
+    background-color: #ff9a8d !important; /* Rojo claro para respuestas incorrectas. */
+    color: #333 !important; /* Asegura que el texto sea oscuro. */
+    border-color: #ff9a8d !important; /* Coincide el borde. */
+}
+
+/* ... (Mantén todo el CSS anterior para body, .quiz-container, h1, #question-text, #options-container, etc.) ... */
+
+/* Estilos para los botones de opción: modernizando su apariencia */
+.option-button {
+    /* Fondo muy claro, casi blanco, que Bootstrap ya provee con btn-outline-secondary */
+    background-color: var(--bs-btn-bg); /* O #f8f9fa si prefieres un color fijo */
+    border: 1px solid var(--bs-btn-border-color); /* Borde sutil, tomado de Bootstrap */
+    border-radius: 12px; /* Esquinas más redondeadas para un look moderno */
+    padding: 15px 25px; /* Más padding para que sean más grandes y fáciles de clickear */
+    font-size: 1.1em; /* Un poco más grandes */
+    cursor: pointer;
+    text-align: left; /* Alinea el texto a la izquierda */
+    /* Transición suave para todos los cambios de estilo */
+    transition: all 0.2s ease-in-out;
+    /* Sombra sutil por defecto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    /* Aseguramos que no haya contornos al hacer foco o click */
+    outline: none !important;
+}
+
+/* Efecto al pasar el ratón por encima (hover) */
+.option-button:hover {
+    background-color: var(--bs-btn-hover-bg); /* Color de fondo de hover de Bootstrap */
+    border-color: var(--bs-btn-hover-border-color); /* Color de borde de hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+    transform: translateY(-2px); /* Un ligero desplazamiento hacia arriba */
+}
+
+/* Eliminar el contorno de foco azul que Bootstrap añade por defecto */
+.option-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Estilos para la respuesta correcta */
+.option-button.correct {
+    background-color: #a8e6cf !important; /* Verde claro */
+    color: #333 !important;
+    border-color: #7bc7ab !important; /* Borde verde más oscuro */
+    box-shadow: 0 2px 5px rgba(0, 180, 0, 0.2); /* Sombra con toque verde */
+    transform: none; /* Asegura que no se mueva */
+}
+
+/* Estilos para la respuesta incorrecta */
+.option-button.incorrect {
+    background-color: #ff9a8d !important; /* Rojo claro */
+    color: #333 !important;
+    border-color: #d86c5f !important; /* Borde rojo más oscuro */
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.2); /* Sombra con toque rojo */
+    transform: none; /* Asegura que no se mueva */
+}
+
+#final-score {
+    font-weight: bold;
+    color: #333; /* O 'black' si prefieres negro puro */
+}
+
+/* Estilos para el encabezado de resultados si el GIF es un poco rebelde */
+.results-header h2 {
+    margin: 0; /* Elimina el margen por defecto del h2 que podría romper la alineación Flexbox */
+}
+
+.final-gif {
+    /* Bootstrap ya maneja img-fluid y rounded, este estilo es por si necesitas un max-width fijo o ajustes extra */
+    max-width: 200px; /* Asegura el tamaño deseado del GIF */
+    /* Puedes añadir más estilos aquí si quieres personalizarlo aún más */
+}
